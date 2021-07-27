@@ -37,6 +37,7 @@ export default function App() {
 
   function emojiClickHandler(inputEmoji) {
     setShowEmoji(inputEmoji)
+    setEmoji(inputEmoji)
     setMeaning(animals_nature[inputEmoji]);
   }
 
