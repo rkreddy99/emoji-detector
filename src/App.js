@@ -6,7 +6,8 @@ const emojis = Object.keys(animals_nature);
 
 export default function App() {
   const [emoji, setEmoji] = useState(""); /** concept 2 is useState */
-  const [meaning, setMeaning] = useState("translation will appear here..");
+  const [meaning, setMeaning] = useState("lion");
+  const [showEmoji, setShowEmoji] = useState("🦁")
 
   function changeHandler(event) {
     const inputEmoji = event.target.value;
@@ -14,12 +15,15 @@ export default function App() {
     var set = false;
 
     if (inputEmoji in animals_nature) {
-      setMeaning(animals_nature[inputEmoji]);
+      // setMeaning(animals_nature[inputEmoji]);
+      setShowEmoji(inputEmoji)
+      setMeaning(animals_nature[inputEmoji])
       set = true;
     } else {
       for (var key in animals_nature) {
         if (animals_nature[key] === inputEmoji.toLowerCase()){
-          setMeaning(key);
+          setShowEmoji(key);
+          setMeaning(inputEmoji)
           set = true;
           break;
         }
@@ -32,6 +36,7 @@ export default function App() {
   }
 
   function emojiClickHandler(inputEmoji) {
+    setShowEmoji(inputEmoji)
     setMeaning(animals_nature[inputEmoji]);
   }
 
@@ -43,20 +48,19 @@ export default function App() {
         className="input"
         onChange={changeHandler}
         value={emoji}
-        placeholder={"Type \"monkey\" or 🐒"}
+        placeholder={"Type \"lion\" or 🦁"}
       />
       {/* <h2> {emoji} </h2> * Concept 1: JSX */}
-      <h2> {meaning} </h2> {/** how much part is re-rendered. */}
+      <h2> {showEmoji} - {meaning} </h2> {/** how much part is re-rendered. */}
       <div className="emoji-list">
         {
           emojis.map((curr_emoji) => (
             <span
               className="emoji"
               onClick={() => emojiClickHandler(curr_emoji)}
-              style={{}}
+              style={curr_emoji === showEmoji ? {fontSize:"2.8rem"} : {} }
             >
-              {" "}
-              {curr_emoji}{" "}
+              {" "}{curr_emoji}{" "}
             </span>
           ))
         }

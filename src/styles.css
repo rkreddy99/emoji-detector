@@ -50,7 +50,7 @@ body {
 
 .emoji-list {
   margin: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 .emoji{
@@ -72,5 +72,5 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: small
+  font-size: small;
 }

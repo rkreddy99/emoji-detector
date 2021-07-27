@@ -180,15 +180,8 @@ var animals_nature = {
     '⚡': 'high voltage',
     '❄️': 'snowflake',
     '☃️': 'snowman',
-    '⛄': 'snowman without snow',
     '☄️': 'comet',
     '🔥': 'fire',
-    '💧': 'droplet',
-    '🌊': 'water wave',
-    '🎄': 'christmas tree',
-    '✨': 'sparkles',
-    '🎋': 'tanabata tree',
-    '🎍': 'pine decoration'
 }
 
 module.exports = animals_nature;
