@@ -31,7 +31,7 @@ export default function App() {
     }
     
     if (set === false) {
-      setShowEmoji("🦬")
+      setShowEmoji("☐")
       setMeaning("Emoji not found!!!")
     }
   }
